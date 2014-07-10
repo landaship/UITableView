@@ -19,6 +19,7 @@
 		BFD8930A196E4F0700F6EC4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD892F2196E4F0700F6EC4D /* UIKit.framework */; };
 		BFD89312196E4F0700F6EC4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFD89310196E4F0700F6EC4D /* InfoPlist.strings */; };
 		BFD89314196E4F0700F6EC4D /* UITableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD89313196E4F0700F6EC4D /* UITableViewTests.m */; };
+		BFD8931F196E552000F6EC4D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8931E196E552000F6EC4D /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		BFD8930F196E4F0700F6EC4D /* UITableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITableViewTests-Info.plist"; sourceTree = "<group>"; };
 		BFD89311196E4F0700F6EC4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BFD89313196E4F0700F6EC4D /* UITableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewTests.m; sourceTree = "<group>"; };
+		BFD8931D196E552000F6EC4D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		BFD8931E196E552000F6EC4D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				BFD892FD196E4F0700F6EC4D /* AppDelegate.h */,
 				BFD892FE196E4F0700F6EC4D /* AppDelegate.m */,
+				BFD8931D196E552000F6EC4D /* RootViewController.h */,
+				BFD8931E196E552000F6EC4D /* RootViewController.m */,
 				BFD89300196E4F0700F6EC4D /* Images.xcassets */,
 				BFD892F5196E4F0700F6EC4D /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 			files = (
 				BFD892FF196E4F0700F6EC4D /* AppDelegate.m in Sources */,
 				BFD892FB196E4F0700F6EC4D /* main.m in Sources */,
+				BFD8931F196E552000F6EC4D /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
