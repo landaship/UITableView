@@ -24,7 +24,7 @@
     self.title = @"???";
     // 添加tableview
     // tableview的默认起点就是在bar的下面,这里不需要设置什么他的高度还是起始地点
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height ) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height ) style:UITableViewStyleGrouped];
     
     // 设置行高
     tableView.rowHeight = 40;
@@ -75,15 +75,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mar - 设置右边的索引条
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // 超出个数的那些东东他不会相应
+    return [NSArray arrayWithObjects:@"A",@"B", @"C", @"D",@"E", nil];
 }
-*/
 
+#pragma mark - 设置secion头部标题
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+        return @"这个是头部";
+}
+
+#pragma mark - 设置section的尾部
+-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return @"这个是尾部";
+}
+
+#pragma mark   - 设置行高
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 40;
+}
+
+#pragma mark -设置缩进级别
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row %2) {
+        return 12;
+    }
+    
+    return 20;
+}
+
+#pragma mark - 设置section的view，但是这个view默认是居中的，估计有方法设置吧
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    btn.bounds = CGRectMake(0, 0, 100, 100);
+    return btn;
+}
 @end
