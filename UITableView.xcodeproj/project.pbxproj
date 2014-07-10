@@ -20,6 +20,8 @@
 		BFD89312196E4F0700F6EC4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFD89310196E4F0700F6EC4D /* InfoPlist.strings */; };
 		BFD89314196E4F0700F6EC4D /* UITableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD89313196E4F0700F6EC4D /* UITableViewTests.m */; };
 		BFD8931F196E552000F6EC4D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8931E196E552000F6EC4D /* RootViewController.m */; };
+		BFD89321196E778B00F6EC4D /* cellImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD89320196E778B00F6EC4D /* cellImage.png */; };
+		BFD89324196E7B3000F6EC4D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD89323196E7B3000F6EC4D /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		BFD89313196E4F0700F6EC4D /* UITableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewTests.m; sourceTree = "<group>"; };
 		BFD8931D196E552000F6EC4D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BFD8931E196E552000F6EC4D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BFD89320196E778B00F6EC4D /* cellImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellImage.png; sourceTree = "<group>"; };
+		BFD89322196E7B3000F6EC4D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BFD89323196E7B3000F6EC4D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				BFD892FD196E4F0700F6EC4D /* AppDelegate.h */,
+				BFD89320196E778B00F6EC4D /* cellImage.png */,
 				BFD892FE196E4F0700F6EC4D /* AppDelegate.m */,
 				BFD8931D196E552000F6EC4D /* RootViewController.h */,
 				BFD8931E196E552000F6EC4D /* RootViewController.m */,
+				BFD89322196E7B3000F6EC4D /* DetailViewController.h */,
+				BFD89323196E7B3000F6EC4D /* DetailViewController.m */,
 				BFD89300196E4F0700F6EC4D /* Images.xcassets */,
 				BFD892F5196E4F0700F6EC4D /* Supporting Files */,
 			);
@@ -226,6 +234,7 @@
 			files = (
 				BFD892F9196E4F0700F6EC4D /* InfoPlist.strings in Resources */,
 				BFD89301196E4F0700F6EC4D /* Images.xcassets in Resources */,
+				BFD89321196E778B00F6EC4D /* cellImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +256,7 @@
 				BFD892FF196E4F0700F6EC4D /* AppDelegate.m in Sources */,
 				BFD892FB196E4F0700F6EC4D /* main.m in Sources */,
 				BFD8931F196E552000F6EC4D /* RootViewController.m in Sources */,
+				BFD89324196E7B3000F6EC4D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

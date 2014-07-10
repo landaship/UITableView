@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "DetailViewController.h"
 
 // 导航栏bar的高度
 #define kNavigationBarH 44
@@ -37,7 +38,7 @@
     
     // 设置分割线颜色
     tableView.separatorColor = [UIColor greenColor];
-    tableView.backgroundColor = [UIColor redColor];
+    //    tableView.backgroundColor = [UIColor redColor];
 
     // 设置代理
     tableView.delegate = self;
@@ -56,12 +57,48 @@
 {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    //UITableViewCellStyle一共有4中
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
+    // 1. 自定义cellImage
+    cell.imageView.image  = [UIImage imageNamed:@"cellImage.png"];
+    
+    // 2. 设置detailLable
+    cell.detailTextLabel.text = @"detail";
+    
+    // 3.选中效果 一共有4种效果，貌似蓝色的不管用了,default 也是gray的。。。
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    
+    //4. 设置accessoryType 一共有5种效果，一种是按钮的效果，得通过代理来相应点击事件
+    if (indexPath.section % 2) {
+        // 只有是view的时候才会有点击事件产生哦
+        cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
     
     cell.textLabel.text =  [NSString stringWithFormat:@"第%d行 第%d列",  indexPath.section, indexPath.row];
     return cell;
+}
+
+#pragma mark - accessory 点击事件代理
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"附件按钮被点击了 第 %d行 第 %d列", indexPath.section, indexPath.row);
+}
+
+#pragma mark - cell点击事件代理 选中了那行
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailVC = [[DetailViewController alloc]init];
+    detailVC.indexpath = indexPath;
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -104,10 +141,10 @@
 -(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row %2) {
-        return 12;
+        return 2;
     }
     
-    return 20;
+    return 5;
 }
 
 #pragma mark - 设置section的view，但是这个view默认是居中的，估计有方法设置吧
